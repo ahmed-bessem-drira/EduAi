@@ -20,6 +20,9 @@ const OutputResume = ({ resume, language = 'fr' }) => {
     const text = `
 ${resume.introduction}
 
+Explication Détaillée:
+${resume.explication_detaillee}
+
 Points Clés:
 ${resume.points_cles.map((point, i) => `${i + 1}. ${point}`).join('\n')}
 
@@ -68,6 +71,16 @@ ${resume.conclusion}
             </div>
             <p className={styles.sectionText}>{resume.introduction}</p>
           </div>
+
+          {resume.explication_detaillee && (
+            <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.05s' }}>
+              <div className={styles.sectionHeader}>
+                <BookOpen className={styles.sectionIcon} />
+                <h3 className={styles.sectionTitle}>Explication Détaillée</h3>
+              </div>
+              <p className={styles.sectionText}>{resume.explication_detaillee}</p>
+            </div>
+          )}
 
           <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.1s' }}>
             <div className={styles.sectionHeader}>

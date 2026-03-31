@@ -36,6 +36,7 @@ Language for all content: ${langLabel}.`;
 {
   "resume": {
     "introduction": "2-3 sentence introduction to the topic",
+    "explication_detaillee": "A rich and detailed paragraph explaining the core concepts of the course in depth",
     "points_cles": ["key point 1", "key point 2", "key point 3", "key point 4", "key point 5"],
     "definitions": [{"terme": "term", "definition": "clear definition"}],
     "conclusion": "2-3 sentence conclusion"
@@ -135,9 +136,9 @@ ${text}`;
     }
 
     const resume = response.resume;
-    if (!resume.introduction || !resume.conclusion) {
+    if (!resume.introduction || !resume.conclusion || !resume.explication_detaillee) {
       throw new InternalServerErrorException(
-        'Resume is missing introduction or conclusion',
+        'Resume is missing introduction, conclusion, or explication_detaillee',
       );
     }
     if (!Array.isArray(resume.points_cles) || resume.points_cles.length === 0) {
