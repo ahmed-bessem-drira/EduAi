@@ -1,17 +1,17 @@
 :root {
-  --bg-primary: #0a0b0f;
-  --bg-secondary: #111318;
-  --bg-card: #16181f;
-  --accent-primary: #6c63ff;
-  --accent-secondary: #00d4aa;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
   --accent-warm: #f59e0b;
-  --text-primary: #f0f0f5;
-  --text-secondary: #8b8fa8;
-  --text-muted: #4a4d5e;
-  --border: #1e2130;
-  --border-hover: #6c63ff44;
-  --glow: 0 0 30px #6c63ff33;
-  --glow-teal: 0 0 20px #00d4aa22;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --border-hover: #3b82f644;
+  --glow: 0 0 30px rgba(59, 130, 246, 0.2);
+  --glow-teal: 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
 * {
@@ -112,13 +112,13 @@ input, textarea, select {
 }
 
 .gradient-bg {
-  background: linear-gradient(-45deg, #0a0b0f, #111318, #16181f, #1e2130);
+  background: linear-gradient(-45deg, #f8fafc, #eff6ff, #f5f3ff, #e0e7ff);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
 .glass {
-  background: rgba(10, 11, 15, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border);
 }
@@ -140,7 +140,7 @@ input, textarea, select {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
 }
 
 .btn-secondary {

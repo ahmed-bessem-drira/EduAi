@@ -57,7 +57,7 @@
 
 .modeButton:hover {
   color: var(--text-primary);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .modeButton.active {
@@ -98,7 +98,7 @@
 .textInput:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .textInput:disabled {
@@ -118,8 +118,8 @@
 .dropZone {
   position: relative;
   border: 2px dashed var(--border);
-  border-radius: 8px;
-  padding: 48px 24px;
+  border-radius: 16px;
+  padding: 60px 24px;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -127,12 +127,14 @@
 
 .dropZone:hover {
   border-color: var(--accent-primary);
-  background: rgba(108, 99, 255, 0.05);
+  background: rgba(59, 130, 246, 0.05);
+  transform: scale(1.02);
 }
 
 .dropZone.dragActive {
   border-color: var(--accent-secondary);
-  background: rgba(0, 212, 170, 0.1);
+  background: rgba(16, 185, 129, 0.1);
+  transform: scale(1.04);
 }
 
 .fileInput {
@@ -249,7 +251,7 @@
 
 .generateButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
 }
 
 .generateButton:disabled {

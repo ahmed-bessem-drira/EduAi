@@ -89,7 +89,7 @@
 
 .tab:hover {
   color: var(--text-primary);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .tab.active {
@@ -200,17 +200,17 @@
 
 .option:hover {
   border-color: var(--accent-primary);
-  background: rgba(108, 99, 255, 0.05);
+  background: rgba(59, 130, 246, 0.05);
 }
 
 .option.selected {
   border-color: var(--accent-primary);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .option.correct {
   border-color: var(--accent-secondary);
-  background: rgba(0, 212, 170, 0.1);
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .option.incorrect {
@@ -302,7 +302,7 @@
 .answerTextarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .answerTextarea::placeholder {

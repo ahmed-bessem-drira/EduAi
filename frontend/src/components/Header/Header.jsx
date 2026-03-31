@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, Brain, BookOpen, Mail } from 'lucide-react';
+import { Menu, X, BookOpen, Mail } from 'lucide-react';
 import styles from './Header.module.css';
+import logoUrl from '../../assets/EduAI.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +22,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <div className={styles.logoIcon}>
-            <Brain className={styles.brainIcon} />
-          </div>
+          <img src={logoUrl} alt="EduAI Logo" className={styles.logoImg} />
           <span className={styles.logoText}>EduAI</span>
         </div>
 
