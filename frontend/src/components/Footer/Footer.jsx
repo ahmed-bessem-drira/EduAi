@@ -1,0 +1,105 @@
+import React from 'react';
+import { Brain, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import styles from './Footer.module.css';
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      icon: Github,
+      href: 'https://github.com',
+      label: 'GitHub Profile',
+    },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      href: 'https://linkedin.com',
+      label: 'LinkedIn Profile',
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      href: 'mailto:contact@eduai.com',
+      label: 'Email Contact',
+    },
+  ];
+
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.column}>
+            <div className={styles.logo}>
+              <div className={styles.logoIcon}>
+                <Brain className={styles.brainIcon} />
+              </div>
+              <span className={styles.logoText}>EduAI</span>
+            </div>
+            <p className={styles.description}>
+              Transformez vos cours en intelligence avec l'IA. 
+              Analyse, résumé, et quiz interactifs pour un apprentissage amélioré.
+            </p>
+          </div>
+
+          <div className={styles.column}>
+            <h3 className={styles.columnTitle}>Liens Rapides</h3>
+            <nav className={styles.nav}>
+              <a href="#tool" className={styles.navLink}>
+                Outil d'Analyse
+              </a>
+              <a href="#contact" className={styles.navLink}>
+                Contact
+              </a>
+              <a href="#" className={styles.navLink}>
+                À Propos
+              </a>
+              <a href="#" className={styles.navLink}>
+                Documentation
+              </a>
+            </nav>
+          </div>
+
+          <div className={styles.column}>
+            <h3 className={styles.columnTitle}>Suivez-nous</h3>
+            <div className={styles.socialLinks}>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  className={styles.socialLink}
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon className={styles.socialIcon} />
+                </a>
+              ))}
+            </div>
+            <div className={styles.newsletter}>
+              <p className={styles.newsletterText}>
+                Restez informé des nouvelles fonctionnalités
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.bottom}>
+          <div className={styles.copyright}>
+            <p className={styles.copyrightText}>
+              © {currentYear} EduAI. Tous droits réservés.
+            </p>
+          </div>
+          <div className={styles.love}>
+            <span className={styles.loveText}>
+              Made with <Heart className={styles.heartIcon} /> and Groq AI
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
