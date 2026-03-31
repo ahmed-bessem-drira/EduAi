@@ -27,7 +27,8 @@ export class AiService {
       language === 'fr' ? 'French' : language === 'ar' ? 'Arabic' : 'English';
 
     const systemPrompt = `You are an expert educational content analyzer.
-Your task is to analyze the provided course content and generate structured educational materials.
+Your task is to exhaustively analyze the provided course content and generate structured educational materials.
+CRITICAL: Your summary section MUST cover the ENTIRE document. Do not just summarize the beginning. You must extract explanations, definitions, and key points from every section of the provided text to create a perfect and complete summary.
 You MUST respond ONLY with valid JSON, no markdown, no explanation, no preamble.
 The JSON must strictly follow the schema provided.
 Language for all content: ${langLabel}.`;
@@ -38,7 +39,7 @@ Language for all content: ${langLabel}.`;
     "introduction": "2-3 sentence introduction to the topic",
     "points_cles": ["key point 1", "key point 2", "key point 3", "key point 4", "key point 5"],
     "definitions": [{"terme": "term", "definition": "clear definition"}],
-    "explications_etapes": [{"etape": "Name of the step/concept", "explication": "Detailed step-by-step explanation", "exemple": "Concrete small example"}],
+    "explications_etapes": [{"etape": "Name of the concept/section", "explication": "Detailed explanation. You MUST comprehensively cover this part of the course.", "exemple": "Concrete example"}],
     "points_a_retenir": ["takeaway 1", "takeaway 2", "takeaway 3"],
     "conclusion": "2-3 sentence conclusion"
   },
@@ -63,6 +64,7 @@ Language for all content: ${langLabel}.`;
 }
 
 Rules:
+- EXHAUSTIVE SUMMARY: You MUST cover ALL main concepts from the ENTIRE document in the 'explications_etapes' array. Do not skip any major section of the text.
 - qcm must contain exactly 10 questions
 - questions_ouvertes must contain exactly 5 questions
 - options must always be an array of 4 strings
