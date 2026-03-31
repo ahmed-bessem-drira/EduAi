@@ -38,9 +38,10 @@ Language for all content: ${langLabel}.`;
 {
   "resume": {
     "introduction": "2-3 sentence introduction to the topic",
-    "explication_detaillee": "A rich and detailed paragraph explaining the core concepts of the course in depth",
     "points_cles": ["key point 1", "key point 2", "key point 3", "key point 4", "key point 5"],
     "definitions": [{"terme": "term", "definition": "clear definition"}],
+    "explications_etapes": [{"etape": "Name of the step/concept", "explication": "Detailed step-by-step explanation", "exemple": "Concrete small example"}],
+    "points_a_retenir": ["takeaway 1", "takeaway 2", "takeaway 3"],
     "conclusion": "2-3 sentence conclusion"
   },
   "qcm": [
@@ -122,11 +123,17 @@ ${text}`;
             throw new common_1.InternalServerErrorException('Missing "resume" field');
         }
         const resume = response.resume;
-        if (!resume.introduction || !resume.conclusion || !resume.explication_detaillee) {
-            throw new common_1.InternalServerErrorException('Resume is missing introduction, conclusion, or explication_detaillee');
+        if (!resume.introduction || !resume.conclusion) {
+            throw new common_1.InternalServerErrorException('Resume is missing introduction or conclusion');
         }
         if (!Array.isArray(resume.points_cles) || resume.points_cles.length === 0) {
             throw new common_1.InternalServerErrorException('Resume must have points_cles array');
+        }
+        if (!Array.isArray(resume.explications_etapes) || resume.explications_etapes.length === 0) {
+            throw new common_1.InternalServerErrorException('Resume must have explications_etapes array');
+        }
+        if (!Array.isArray(resume.points_a_retenir) || resume.points_a_retenir.length === 0) {
+            throw new common_1.InternalServerErrorException('Resume must have points_a_retenir array');
         }
         if (!Array.isArray(resume.definitions)) {
             resume.definitions = [];

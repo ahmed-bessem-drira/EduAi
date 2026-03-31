@@ -20,14 +20,17 @@ const OutputResume = ({ resume, language = 'fr' }) => {
     const text = `
 ${resume.introduction}
 
-Explication Détaillée:
-${resume.explication_detaillee}
-
 Points Clés:
-${resume.points_cles.map((point, i) => `${i + 1}. ${point}`).join('\n')}
+${resume.points_cles?.map((point, i) => `${i + 1}. ${point}`).join('\n')}
 
 Définitions:
-${resume.definitions.map((def) => `${def.terme}: ${def.definition}`).join('\n')}
+${resume.definitions?.map((def) => `${def.terme}: ${def.definition}`).join('\n')}
+
+Explications par Étapes:
+${resume.explications_etapes?.map((etape, i) => `${i + 1}. ${etape.etape}\n   Explication: ${etape.explication}\n   Exemple: ${etape.exemple}`).join('\n\n')}
+
+À Retenir:
+${resume.points_a_retenir?.map((point, i) => `- ${point}`).join('\n')}
 
 Conclusion:
 ${resume.conclusion}
@@ -72,23 +75,13 @@ ${resume.conclusion}
             <p className={styles.sectionText}>{resume.introduction}</p>
           </div>
 
-          {resume.explication_detaillee && (
-            <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.05s' }}>
-              <div className={styles.sectionHeader}>
-                <BookOpen className={styles.sectionIcon} />
-                <h3 className={styles.sectionTitle}>Explication Détaillée</h3>
-              </div>
-              <p className={styles.sectionText}>{resume.explication_detaillee}</p>
-            </div>
-          )}
-
           <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.1s' }}>
             <div className={styles.sectionHeader}>
               <CheckCircle className={styles.sectionIcon} />
               <h3 className={styles.sectionTitle}>Points Clés</h3>
             </div>
             <ul className={styles.pointsList}>
-              {resume.points_cles.map((point, index) => (
+              {resume.points_cles?.map((point, index) => (
                 <li key={index} className={styles.pointItem}>
                   <CheckCircle className={styles.pointIcon} />
                   <span>{point}</span>
@@ -103,7 +96,7 @@ ${resume.conclusion}
               <h3 className={styles.sectionTitle}>Définitions</h3>
             </div>
             <div className={styles.definitionsList}>
-              {resume.definitions.map((definition, index) => (
+              {resume.definitions?.map((definition, index) => (
                 <div key={index} className={styles.definitionItem}>
                   <button
                     className={styles.definitionToggle}
@@ -128,8 +121,42 @@ ${resume.conclusion}
 
           <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.3s' }}>
             <div className={styles.sectionHeader}>
+              <BookOpen className={styles.sectionIcon} />
+              <h3 className={styles.sectionTitle}>Explications Étape par Étape</h3>
+            </div>
+            <div>
+              {resume.explications_etapes?.map((etape, index) => (
+                <div key={index} style={{ background: 'rgba(59, 130, 246, 0.05)', padding: '15px', borderRadius: '8px', marginBottom: '15px', border: '1px solid rgba(59, 130, 246, 0.1)' }}>
+                  <h4 style={{ fontWeight: 600, color: '#2563eb', marginBottom: '8px', fontSize: '1.05rem' }}>{index + 1}. {etape.etape}</h4>
+                  <p style={{ marginBottom: '10px', lineHeight: 1.6, color: '#334155' }}>{etape.explication}</p>
+                  <div style={{ background: '#f8fafc', padding: '10px', borderRadius: '6px', borderLeft: '3px solid #10b981' }}>
+                    <strong style={{ display: 'block', fontSize: '13px', color: '#64748b', marginBottom: '4px' }}>EXEMPLE</strong>
+                    <span style={{ fontStyle: 'italic', color: '#10b981', fontSize: '14px' }}>{etape.exemple}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.4s' }}>
+            <div className={styles.sectionHeader}>
               <CheckCircle className={styles.sectionIcon} />
-              <h3 className={styles.sectionTitle}>Conclusion</h3>
+              <h3 className={styles.sectionTitle}>Points À Retenir</h3>
+            </div>
+            <ul className={styles.pointsList}>
+              {resume.points_a_retenir?.map((point, index) => (
+                <li key={index} className={styles.pointItem}>
+                  <CheckCircle className={styles.pointIcon} style={{ color: '#8b5cf6' }} />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={`${styles.section} ${styles.fadeIn}`} style={{ animationDelay: '0.5s' }}>
+            <div className={styles.sectionHeader}>
+              <CheckCircle className={styles.sectionIcon} />
+              <h3 className={styles.sectionTitle}>Conclusion Générale</h3>
             </div>
             <p className={styles.sectionText}>{resume.conclusion}</p>
           </div>
