@@ -1,7 +1,7 @@
 .footer {
-  background: var(--bg-secondary);
+  background: #050505;
   border-top: 1px solid var(--border);
-  padding: 60px 0 20px;
+  padding: 80px 0 40px;
 }
 
 .container {
@@ -13,135 +13,137 @@
 .content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
+  gap: 60px;
+  margin-bottom: 60px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .logoIcon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  background: var(--accent-primary);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--glow);
+  box-shadow: var(--glow-gold);
 }
 
 .brainIcon {
-  width: 24px;
-  height: 24px;
-  color: white;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
 }
 
 .logoText {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   letter-spacing: -0.5px;
 }
 
 .description {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   line-height: 1.6;
-  font-size: 14px;
-  max-width: 300px;
+  font-size: 15px;
+  max-width: 350px;
 }
 
 .columnTitle {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .navLink {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-  padding: 4px 0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  padding: 2px 0;
 }
 
 .navLink:hover {
   color: var(--accent-primary);
+  transform: translateX(4px);
 }
 
 .socialLinks {
   display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .socialLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
+  width: 44px;
+  height: 44px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #a0a0a0;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .socialLink:hover {
   border-color: var(--accent-primary);
+  background: rgba(217, 164, 65, 0.05);
   color: var(--accent-primary);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .socialIcon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .newsletter {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .newsletterText {
-  color: var(--text-muted);
-  font-size: 12px;
-  line-height: 1.4;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 32px;
+  padding-top: 40px;
   border-top: 1px solid var(--border);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
 }
 
 .copyrightText {
-  color: var(--text-muted);
-  font-size: 12px;
+  color: #555;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -152,17 +154,17 @@
 }
 
 .loveText {
-  color: var(--text-muted);
-  font-size: 12px;
+  color: #555;
+  font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .heartIcon {
-  width: 12px;
-  height: 12px;
-  color: var(--accent-warm);
+  width: 14px;
+  height: 14px;
+  color: var(--accent-primary);
 }
 
 @media (max-width: 768px) {
@@ -171,12 +173,12 @@
   }
 
   .footer {
-    padding: 40px 0 20px;
+    padding: 60px 0 30px;
   }
 
   .content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
   .logo {
@@ -184,12 +186,12 @@
   }
 
   .logoText {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .logoIcon {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
 
   .brainIcon {
@@ -198,37 +200,37 @@
   }
 
   .description {
-    font-size: 13px;
+    font-size: 14px;
     max-width: 100%;
   }
 
   .columnTitle {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .navLink {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .socialLink {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
 
   .socialIcon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 
   .bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    padding-top: 24px;
+    gap: 16px;
+    padding-top: 30px;
   }
 
   .copyrightText,
   .loveText {
-    font-size: 11px;
+    font-size: 12px;
   }
 }

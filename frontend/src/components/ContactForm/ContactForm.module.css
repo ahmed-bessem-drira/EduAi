@@ -1,78 +1,85 @@
 .contactForm {
-  padding: 80px 0;
-  background: var(--bg-primary);
+  padding: 100px 0;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 32px;
+  font-size: 64px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0 0 16px 0;
 }
 
-.titleIcon {
-  width: 32px;
-  height: 32px;
-  color: var(--accent-primary);
-}
-
 .subtitle {
-  font-size: 16px;
-  color: var(--text-secondary);
+  font-size: 20px;
+  color: #a0a0a0;
   line-height: 1.6;
   margin: 0;
 }
 
+.formWrapper {
+  position: relative;
+  padding: 20px;
+}
+
+.decorativeCorner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid #d9a441;
+  border-left: 2px solid #d9a441;
+  opacity: 0.8;
+}
+
 .form {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: var(--glow);
+  background: #121111;
+  padding: 20px 0;
 }
 
 .formGroup {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .label {
-  display: block;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  color: #d9a441;
+  margin-bottom: 12px;
 }
 
-.required {
-  color: var(--accent-warm);
-  margin-left: 4px;
+.label span {
+  font-family: 'DM Sans', sans-serif;
 }
 
 .input,
 .textarea {
   width: 100%;
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
+  background: #1a1a1a;
+  border: 1px solid #333;
   border-radius: 8px;
-  padding: 12px 16px;
-  color: var(--text-primary);
-  font-size: 14px;
+  padding: 16px;
+  color: #ffffff;
+  font-size: 16px;
   font-family: inherit;
   transition: all 0.3s ease;
 }
@@ -80,24 +87,23 @@
 .input:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #d9a441;
+  box-shadow: 0 0 0 1px rgba(217, 164, 65, 0.2);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--text-muted);
+  color: #555;
 }
 
 .input.error,
 .textarea.error {
   border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 160px;
 }
 
 .errorMessage {
@@ -106,12 +112,12 @@
   gap: 8px;
   margin-top: 8px;
   color: #ef4444;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .errorIcon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 
 .submitButton {
@@ -120,37 +126,37 @@
   justify-content: center;
   gap: 12px;
   width: 100%;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
+  background: #d4a356;
+  color: #ffffff;
   border: none;
-  padding: 16px 24px;
+  padding: 18px 24px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: var(--glow);
+  margin-top: 20px;
 }
 
 .submitButton:hover:not(:disabled) {
+  background: #c39245;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 4px 20px rgba(212, 163, 86, 0.3);
 }
 
 .submitButton:disabled {
   opacity: 0.7;
   cursor: not-allowed;
-  transform: none;
 }
 
 .submitIcon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 .spinner {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top: 2px solid white;
   border-radius: 50%;
@@ -163,39 +169,29 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-
   .contactForm {
     padding: 60px 0;
   }
 
   .title {
-    font-size: 24px;
-  }
-
-  .titleIcon {
-    width: 24px;
-    height: 24px;
+    font-size: 40px;
   }
 
   .subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 
-  .form {
-    padding: 32px 24px;
+  .formWrapper {
+    padding: 10px;
   }
 
   .input,
   .textarea {
-    font-size: 14px;
-    padding: 10px 14px;
+    padding: 14px;
   }
 
   .submitButton {
-    padding: 14px 20px;
-    font-size: 14px;
+    padding: 16px 20px;
+    font-size: 16px;
   }
 }

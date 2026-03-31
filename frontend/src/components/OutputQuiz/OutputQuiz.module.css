@@ -1,6 +1,6 @@
 .outputQuiz {
-  padding: 80px 0;
-  background: var(--bg-secondary);
+  padding: 100px 0;
+  background: var(--bg-primary);
 }
 
 .container {
@@ -13,9 +13,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
 }
 
 .title {
@@ -25,7 +25,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 32px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
 }
 
@@ -37,7 +37,7 @@
 
 .stats {
   display: flex;
-  gap: 24px;
+  gap: 32px;
 }
 
 .statItem {
@@ -48,23 +48,23 @@
 }
 
 .statNumber {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--accent-primary);
 }
 
 .statLabel {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #a0a0a0;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
 .tabs {
   display: flex;
   gap: 16px;
-  margin-bottom: 24px;
-  background: var(--bg-card);
+  margin-bottom: 32px;
+  background: rgba(18, 17, 17, 0.8);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 4px;
@@ -78,9 +78,9 @@
   gap: 8px;
   background: transparent;
   border: none;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border-radius: 8px;
-  color: var(--text-secondary);
+  color: #a0a0a0;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -88,129 +88,133 @@
 }
 
 .tab:hover {
-  color: var(--text-primary);
-  background: rgba(59, 130, 246, 0.1);
+  color: #ffffff;
+  background: rgba(217, 164, 65, 0.05);
 }
 
 .tab.active {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: var(--glow-gold);
 }
 
 .tabIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .difficultyStats {
   display: flex;
   gap: 12px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
 .content {
-  background: var(--bg-card);
+  background: #121111;
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 40px;
 }
 
 .progress {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
 .progressText {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   font-size: 14px;
   font-weight: 600;
+  margin-top: 12px;
+  display: block;
 }
 
 .questionsList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .questionCard {
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px;
   transition: all 0.3s ease;
 }
 
 .questionCard:hover {
-  border-color: var(--border-hover);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-primary);
+  box-shadow: var(--glow);
 }
 
 .questionHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .questionNumber {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  width: 44px;
+  height: 44px;
+  background: var(--accent-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ffffff;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
+  box-shadow: var(--glow-gold);
 }
 
 .questionMeta {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .questionText {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 20px 0;
-  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
 }
 
 .optionsList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
 .option {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  background: var(--bg-card);
-  border: 2px solid var(--border);
-  border-radius: 8px;
+  gap: 14px;
+  padding: 18px 24px;
+  background: #121111;
+  border: 2px solid #333;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .option:hover {
   border-color: var(--accent-primary);
-  background: rgba(59, 130, 246, 0.05);
+  background: rgba(217, 164, 65, 0.05);
 }
 
 .option.selected {
   border-color: var(--accent-primary);
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(217, 164, 65, 0.1);
 }
 
 .option.correct {
-  border-color: var(--accent-secondary);
-  background: rgba(16, 185, 129, 0.1);
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
 }
 
 .option.incorrect {
@@ -223,27 +227,27 @@
 }
 
 .optionText {
-  color: var(--text-primary);
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 15px;
   flex: 1;
 }
 
 .correctIcon {
-  width: 18px;
-  height: 18px;
-  color: var(--accent-secondary);
+  width: 20px;
+  height: 20px;
+  color: #22c55e;
 }
 
 .revealButton {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 14px;
+  gap: 10px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -254,46 +258,49 @@
 .revealButton:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+  background: rgba(217, 164, 65, 0.05);
 }
 
 .revealIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
 .answerExplanation {
-  margin-top: 20px;
-  padding: 20px;
-  background: var(--bg-card);
-  border: 1px solid var(--accent-secondary);
-  border-radius: 8px;
+  margin-top: 24px;
+  padding: 24px;
+  background: #121111;
+  border: 1px solid var(--accent-primary);
+  border-radius: 12px;
   animation: slideDown 0.3s ease-out;
 }
 
 .correctAnswer {
-  color: var(--accent-secondary);
-  font-weight: 600;
+  color: #22c55e;
+  font-weight: 700;
   margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .explanation {
-  color: var(--text-secondary);
+  color: #a0a0a0;
   line-height: 1.6;
+  font-size: 15px;
 }
 
 .answerArea {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .answerTextarea {
   width: 100%;
-  min-height: 120px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
-  color: var(--text-primary);
-  font-size: 14px;
+  min-height: 150px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  color: #ffffff;
+  font-size: 15px;
   font-family: inherit;
   resize: vertical;
   transition: all 0.3s ease;
@@ -302,11 +309,93 @@
 .answerTextarea:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 1px rgba(217, 164, 65, 0.2);
 }
 
 .answerTextarea::placeholder {
-  color: var(--text-muted);
+  color: #555;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .outputQuiz {
+    padding: 60px 0;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .titleIcon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .stats {
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tabs {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .content {
+    padding: 24px;
+  }
+
+  .questionCard {
+    padding: 24px;
+  }
+
+  .questionText {
+    font-size: 18px;
+  }
+
+  .questionNumber {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .option {
+    padding: 14px 20px;
+  }
+
+  .optionText {
+    font-size: 14px;
+  }
+
+  .answerTextarea {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .difficultyStats {
+    justify-content: center;
+  }
 }
 
 @keyframes slideDown {

@@ -10,7 +10,6 @@ import styles from './InputZone.module.css';
 const InputZone = ({ onGenerate }) => {
   const [mode, setMode] = useState('text');
   const [text, setText] = useState('');
-  const [language, setLanguage] = useState('fr');
   const [dragActive, setDragActive] = useState(false);
   const fileInputRef = useRef(null);
   
@@ -54,7 +53,7 @@ const InputZone = ({ onGenerate }) => {
   const handleGenerate = async () => {
     if (!text.trim()) return;
     
-    const result = await generate(text.trim(), language);
+    const result = await generate(text.trim(), 'fr');
     if (result) {
       onGenerate(result);
     }
@@ -63,7 +62,6 @@ const InputZone = ({ onGenerate }) => {
   const handleReset = () => {
     setText('');
     setMode('text');
-    setLanguage('fr');
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -143,24 +141,6 @@ const InputZone = ({ onGenerate }) => {
             </div>
           )}
 
-          <div className={styles.languageSelector}>
-            <span className={styles.languageLabel}>Langue:</span>
-            <div className={styles.languageButtons}>
-              {[
-                { code: 'fr', label: 'FR 🇫🇷' },
-                { code: 'en', label: 'EN 🇬🇧' },
-                { code: 'ar', label: 'AR 🇸🇦' }
-              ].map((lang) => (
-                <button
-                  key={lang.code}
-                  className={`${styles.languageButton} ${language === lang.code ? styles.active : ''}`}
-                  onClick={() => setLanguage(lang.code)}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-          </div>
 
           {error && (
             <div className={styles.error}>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send, User, MessageSquare, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Toast from '../ui/Toast';
 import styles from './ContactForm.module.css';
@@ -106,19 +106,19 @@ const ContactForm = ({ language = 'fr' }) => {
   const getPlaceholder = (field) => {
     const placeholders = {
       fr: {
-        name: 'Votre nom',
-        email: 'votre@email.com',
-        message: 'Votre message...',
+        name: 'Jean Dupont',
+        email: 'jean@lycee.fr',
+        message: 'Dis-nous tout...',
       },
       en: {
-        name: 'Your name',
-        email: 'your@email.com',
-        message: 'Your message...',
+        name: 'John Doe',
+        email: 'john@school.com',
+        message: 'Tell us everything...',
       },
       ar: {
-        name: 'اسمك',
-        email: 'بريدك الإلكتروني',
-        message: 'رسالتك...',
+        name: 'أحمد محمد',
+        email: 'ahmed@school.com',
+        message: 'أخبرنا بكل شيء...',
       },
     };
     return placeholders[language]?.[field] || placeholders.fr[field];
@@ -129,8 +129,8 @@ const ContactForm = ({ language = 'fr' }) => {
       return language === 'fr' ? 'Envoi en cours...' : 
              language === 'ar' ? 'جاري الإرسال...' : 'Sending...';
     }
-    return language === 'fr' ? 'Envoyer' : 
-           language === 'ar' ? 'إرسال' : 'Send';
+    return language === 'fr' ? 'Envoyer le message' : 
+           language === 'ar' ? 'إرسال الرسالة' : 'Send the message';
   };
 
   return (
@@ -138,110 +138,112 @@ const ContactForm = ({ language = 'fr' }) => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>
-            <Mail className={styles.titleIcon} />
-            {language === 'fr' ? 'Contactez-nous' : 
+            {language === 'fr' ? 'Contacte-nous' : 
              language === 'ar' ? 'اتصل بنا' : 'Contact Us'}
           </h2>
           <p className={styles.subtitle}>
             {language === 'fr' 
-              ? 'Des questions ou des suggestions? N\'hésitez pas à nous contacter.'
+              ? 'Une question, une idée, un bug ? On est là pour toi. 💬'
               : language === 'ar'
-              ? 'هل لديك أسئلة أو اقتراحات؟ لا تتردد في التواصل معنا.'
-              : 'Have questions or suggestions? Feel free to reach out to us.'}
+              ? 'لديك سؤال، فكرة، أو خلل؟ نحن هنا من أجلك. 💬'
+              : 'A question, an idea, a bug? We are here for you. 💬'}
           </p>
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name" className={styles.label}>
-              {language === 'fr' ? 'Nom' : 
-               language === 'ar' ? 'الاسم' : 'Name'}
-              <span className={styles.required}>*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder={getPlaceholder('name')}
-              className={`${styles.input} ${errors.name ? styles.error : ''}`}
-              disabled={isSubmitting}
-            />
-            {errors.name && (
-              <div className={styles.errorMessage}>
-                <AlertCircle className={styles.errorIcon} />
-                {errors.name}
-              </div>
-            )}
-          </div>
+        <div className={styles.formWrapper}>
+          <div className={styles.decorativeCorner} />
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.formGroup}>
+              <label htmlFor="name" className={styles.label}>
+                <User size={18} />
+                <span>{language === 'fr' ? 'Ton nom' : 
+                      language === 'ar' ? 'اسمك' : 'Your name'}</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder={getPlaceholder('name')}
+                className={`${styles.input} ${errors.name ? styles.error : ''}`}
+                disabled={isSubmitting}
+              />
+              {errors.name && (
+                <div className={styles.errorMessage}>
+                  <AlertCircle className={styles.errorIcon} />
+                  {errors.name}
+                </div>
+              )}
+            </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.label}>
-              {language === 'fr' ? 'Email' : 
-               language === 'ar' ? 'البريد الإلكتروني' : 'Email'}
-              <span className={styles.required}>*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              placeholder={getPlaceholder('email')}
-              className={`${styles.input} ${errors.email ? styles.error : ''}`}
-              disabled={isSubmitting}
-            />
-            {errors.email && (
-              <div className={styles.errorMessage}>
-                <AlertCircle className={styles.errorIcon} />
-                {errors.email}
-              </div>
-            )}
-          </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="email" className={styles.label}>
+                <Mail size={18} />
+                <span>{language === 'fr' ? 'Ton email' : 
+                      language === 'ar' ? 'بريدك الإلكتروني' : 'Your email'}</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                placeholder={getPlaceholder('email')}
+                className={`${styles.input} ${errors.email ? styles.error : ''}`}
+                disabled={isSubmitting}
+              />
+              {errors.email && (
+                <div className={styles.errorMessage}>
+                  <AlertCircle className={styles.errorIcon} />
+                  {errors.email}
+                </div>
+              )}
+            </div>
 
-          <div className={styles.formGroup}>
-            <label htmlFor="message" className={styles.label}>
-              {language === 'fr' ? 'Message' : 
-               language === 'ar' ? 'الرسالة' : 'Message'}
-              <span className={styles.required}>*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              placeholder={getPlaceholder('message')}
-              className={`${styles.textarea} ${errors.message ? styles.error : ''}`}
-              rows={5}
-              disabled={isSubmitting}
-            />
-            {errors.message && (
-              <div className={styles.errorMessage}>
-                <AlertCircle className={styles.errorIcon} />
-                {errors.message}
-              </div>
-            )}
-          </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="message" className={styles.label}>
+                <MessageSquare size={18} />
+                <span>{language === 'fr' ? 'Ton message' : 
+                      language === 'ar' ? 'رسالتك' : 'Your message'}</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                placeholder={getPlaceholder('message')}
+                className={`${styles.textarea} ${errors.message ? styles.error : ''}`}
+                rows={5}
+                disabled={isSubmitting}
+              />
+              {errors.message && (
+                <div className={styles.errorMessage}>
+                  <AlertCircle className={styles.errorIcon} />
+                  {errors.message}
+                </div>
+              )}
+            </div>
 
-          <button
-            type="submit"
-            className={styles.submitButton}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              <>
-                <div className={styles.spinner} />
-                <span>{getButtonText()}</span>
-              </>
-            ) : (
-              <>
-                <Send className={styles.submitIcon} />
-                <span>{getButtonText()}</span>
-              </>
-            )}
-          </button>
-        </form>
+            <button
+              type="submit"
+              className={styles.submitButton}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <div className={styles.spinner} />
+                  <span>{getButtonText()}</span>
+                </>
+              ) : (
+                <>
+                  <Send className={styles.submitIcon} />
+                  <span>{getButtonText()}</span>
+                </>
+              )}
+            </button>
+          </form>
+        </div>
 
         {toast && (
           <Toast

@@ -10,13 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "axios": "^1.6.0",
+    "lucide-react": "^0.294.0",
+    "pdfjs-dist": "^3.11.174",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "axios": "^1.6.0",
     "react-router-dom": "^6.8.0",
-    "@emailjs/browser": "^3.11.0",
-    "lucide-react": "^0.294.0",
-    "pdfjs-dist": "^3.11.174"
+    "three": "^0.183.2",
+    "tweakpane": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
