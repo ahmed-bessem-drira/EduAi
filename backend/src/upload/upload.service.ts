@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import * as fs from 'fs';
 import * as path from 'path';
-import pdf from 'pdf-parse';
+const pdf = require('pdf-parse');
 
 @Injectable()
 export class UploadService {
@@ -35,9 +35,16 @@ export class UploadService {
       fs.unlinkSync(filePath);
       console.log('Temporary file cleaned up');
 
-      // Pour l'instant, retourner les informations de base sur le PDF
+      // Extraire le texte du PDF à l'aide de pdf-parse
+      const baseOptions = { max: 0 };
+      const parsedData = await pdf(dataBuffer, baseOptions);
+      const extractedText = parsedData.text;
+      
+      console.log(`Successfully extracted ${extractedText.length} characters from ${file.originalname}`);
+
+      // Retourner le texte extrait
       return {
-        text: `PDF uploaded successfully! File: ${file.originalname}, Size: ${(file.size / 1024).toFixed(2)} KB, Type: ${file.mimetype}. Text extraction will be available soon.`,
+        text: extractedText,
       };
     } catch (error) {
       console.error('PDF Processing Error:', error);

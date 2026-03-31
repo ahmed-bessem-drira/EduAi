@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UploadService = void 0;
 const common_1 = require("@nestjs/common");
 const fs = require("fs");
+const pdf = require('pdf-parse');
 let UploadService = class UploadService {
     async extractTextFromPDF(file) {
         try {
@@ -31,8 +32,12 @@ let UploadService = class UploadService {
             console.log('PDF validation successful');
             fs.unlinkSync(filePath);
             console.log('Temporary file cleaned up');
+            const baseOptions = { max: 0 };
+            const parsedData = await pdf(dataBuffer, baseOptions);
+            const extractedText = parsedData.text;
+            console.log(`Successfully extracted ${extractedText.length} characters from ${file.originalname}`);
             return {
-                text: `PDF uploaded successfully! File: ${file.originalname}, Size: ${(file.size / 1024).toFixed(2)} KB, Type: ${file.mimetype}. Text extraction will be available soon.`,
+                text: extractedText,
             };
         }
         catch (error) {

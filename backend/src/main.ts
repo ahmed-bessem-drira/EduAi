@@ -32,7 +32,8 @@ async function bootstrap() {
 
   await app.listen(port);
   console.log(`🚀 EduAI Backend running on port ${port}`);
-  console.log(`🌐 CORS enabled for: ${frontendUrl}`);
+  console.log(`🌐 CORS enabled for: ${frontendUrl}`); // Dev watch trigger
 }
+
 
 bootstrap();

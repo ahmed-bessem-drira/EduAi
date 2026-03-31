@@ -17,10 +17,14 @@ let AiService = class AiService {
     constructor(configService) {
         this.configService = configService;
         const apiKey = this.configService.get('GROQ_API_KEY');
+        const baseURL = this.configService.get('GROQ_BASE_URL');
         if (!apiKey) {
             throw new Error('GROQ_API_KEY is not configured');
         }
-        this.groq = new groq_sdk_1.Groq({ apiKey });
+        this.groq = new groq_sdk_1.Groq({
+            apiKey,
+            baseURL: baseURL || undefined
+        });
     }
     async generateContent(generateDto) {
         const { text, language = 'fr' } = generateDto;
@@ -68,8 +72,9 @@ Rules:
 Course content:
 ${text}`;
         try {
+            const modelName = this.configService.get('AI_MODEL') || 'llama-3.3-70b-versatile';
             const response = await this.groq.chat.completions.create({
-                model: 'llama-3.3-70b-versatile',
+                model: modelName,
                 messages: [
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: userPrompt },
