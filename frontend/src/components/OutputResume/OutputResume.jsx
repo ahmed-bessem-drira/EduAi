@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, CheckCircle, ChevronDown, ChevronUp, Download, Copy } from 'lucide-react';
+import { BookOpen, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import Badge from '../ui/Badge';
 import styles from './OutputResume.module.css';
 
@@ -16,33 +16,6 @@ const OutputResume = ({ resume, language = 'fr' }) => {
     setExpandedDefinitions(newExpanded);
   };
 
-  const copyToClipboard = () => {
-    const text = `
-${resume.introduction}
-
-Points Clés:
-${resume.points_cles?.map((point, i) => `${i + 1}. ${point}`).join('\n')}
-
-Définitions:
-${resume.definitions?.map((def) => `${def.terme}: ${def.definition}`).join('\n')}
-
-Explications par Étapes:
-${resume.explications_etapes?.map((etape, i) => `${i + 1}. ${etape.etape}\n   Explication: ${etape.explication}\n   Exemple: ${etape.exemple}`).join('\n\n')}
-
-À Retenir:
-${resume.points_a_retenir?.map((point, i) => `- ${point}`).join('\n')}
-
-Conclusion:
-${resume.conclusion}
-    `.trim();
-    
-    navigator.clipboard.writeText(text);
-  };
-
-  const downloadPDF = () => {
-    // This would integrate with the downloadPDF utility
-    console.log('Download PDF functionality');
-  };
 
   if (!resume) return null;
 
@@ -54,16 +27,7 @@ ${resume.conclusion}
             <BookOpen className={styles.titleIcon} />
             Résumé du Cours
           </h2>
-          <div className={styles.actions}>
-            <button className={styles.actionButton} onClick={copyToClipboard}>
-              <Copy className={styles.actionIcon} />
-              Copier
-            </button>
-            <button className={styles.actionButton} onClick={downloadPDF}>
-              <Download className={styles.actionIcon} />
-              PDF
-            </button>
-          </div>
+
         </div>
 
         <div className={styles.content}>
