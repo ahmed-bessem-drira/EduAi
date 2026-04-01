@@ -5,6 +5,7 @@ import About from '../components/About/About';
 import InputZone from '../components/InputZone/InputZone';
 import OutputResume from '../components/OutputResume/OutputResume';
 import OutputQuiz from '../components/OutputQuiz/OutputQuiz';
+import Future from '../components/Future/Future';
 import ContactForm from '../components/ContactForm/ContactForm';
 import Footer from '../components/Footer/Footer';
 
@@ -40,6 +41,7 @@ function Home() {
         </>
       )}
       
+      <Future />
       <ContactForm language="fr" />
       <Footer />
     </div>
