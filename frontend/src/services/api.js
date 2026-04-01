@@ -7,7 +7,7 @@ if (import.meta.env.PROD) {
 
 const api = axios.create({
   baseURL: API_URL,
-  timeout: 30000,
+  timeout: 300000,
   headers: {
     'Content-Type': 'application/json',
   },

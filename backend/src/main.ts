@@ -30,7 +30,8 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
-  await app.listen(port);
+  const server = await app.listen(port);
+  server.setTimeout(300000); // 5 minutes timeout for Render Free Plan
   console.log(`EduAI Backend running on port ${port}`);
   console.log(`🌐 CORS enabled for: ${frontendUrl}`); // Dev watch trigger
 }
