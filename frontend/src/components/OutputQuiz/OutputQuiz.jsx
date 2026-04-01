@@ -100,20 +100,18 @@ const OutputQuiz = ({ qcm, openQuestions, language = 'fr' }) => {
     <section className={styles.outputQuiz}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            <Brain className={styles.titleIcon} />
-            Quiz Interactif
-          </h2>
-          
-          <div className={styles.stats}>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>{qcm?.length || 0}</span>
-              <span className={styles.statLabel}>QCM</span>
-            </div>
-            <div className={styles.statItem}>
-              <span className={styles.statNumber}>{openQuestions?.length || 0}</span>
-              <span className={styles.statLabel}>Questions Ouvertes</span>
-            </div>
+          <h2 className={styles.title}>Quiz Interactif</h2>
+          <div className={styles.divider}></div>
+        </div>
+
+        <div className={styles.stats}>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>{qcm?.length || 0}</span>
+            <span className={styles.statLabel}>QCM</span>
+          </div>
+          <div className={styles.statItem}>
+            <span className={styles.statNumber}>{openQuestions?.length || 0}</span>
+            <span className={styles.statLabel}>Questions Ouvertes</span>
           </div>
         </div>
 

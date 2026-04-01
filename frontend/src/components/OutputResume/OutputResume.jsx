@@ -23,11 +23,8 @@ const OutputResume = ({ resume, language = 'fr' }) => {
     <section className={styles.outputResume}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            <BookOpen className={styles.titleIcon} />
-            Résumé du Cours
-          </h2>
-
+          <h2 className={styles.title}>Résumé du Cours</h2>
+          <div className={styles.divider}></div>
         </div>
 
         <div className={styles.content}>

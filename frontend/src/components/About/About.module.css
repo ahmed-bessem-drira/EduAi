@@ -3,6 +3,7 @@
   color: #fff;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 80px;
 }
 
 .ctaButton {
@@ -40,14 +41,11 @@
 }
 
 .title {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-weight: 700;
+  color: #d9a441;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #fff 0%, #d9a441 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .divider {

@@ -141,6 +141,7 @@ const ContactForm = ({ language = 'fr' }) => {
             {language === 'fr' ? 'Contacte-nous' : 
              language === 'ar' ? 'اتصل بنا' : 'Contact Us'}
           </h2>
+          <div className={styles.divider}></div>
           <p className={styles.subtitle}>
             {language === 'fr' 
               ? 'Une question, une idée, un bug ? On est là pour toi. 💬'

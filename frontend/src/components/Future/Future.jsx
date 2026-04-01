@@ -39,6 +39,7 @@ const Future = () => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Perspectives pour le futur</h2>
+          <div className={styles.divider}></div>
           <p className={styles.subtitle}>
             Notre intelligence artificielle s'améliore continuellement. Voici les prochaines pépites qui viendront révolutionner votre apprentissage.
           </p>

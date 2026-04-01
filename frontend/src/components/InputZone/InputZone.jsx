@@ -76,6 +76,7 @@ const InputZone = ({ onGenerate }) => {
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Analyser votre cours</h2>
+          <div className={styles.divider}></div>
           <p className={styles.subtitle}>
             Collez votre texte ou uploadez un fichier PDF pour commencer l'analyse
           </p>

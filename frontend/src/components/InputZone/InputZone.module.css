@@ -1,6 +1,7 @@
 .inputZone {
   padding: 100px 0;
   background: var(--bg-primary);
+  scroll-margin-top: 80px;
 }
 
 .container {
@@ -15,11 +16,19 @@
 }
 
 .title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 48px;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 16px;
+  color: #d9a441;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: #d9a441;
+  margin: 0 auto;
+  border-radius: 2px;
 }
 
 .subtitle {
