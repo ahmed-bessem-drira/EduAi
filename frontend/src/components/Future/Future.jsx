@@ -35,7 +35,7 @@ const Future = () => {
   };
 
   return (
-    <section className={styles.futureSection}>
+    <section id="future" className={styles.futureSection}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Perspectives pour le futur</h2>

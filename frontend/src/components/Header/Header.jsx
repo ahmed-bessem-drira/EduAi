@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, BookOpen, Mail } from 'lucide-react';
+import { Menu, X, BookOpen, Mail, Zap } from 'lucide-react';
 import styles from './Header.module.css';
 import logoUrl from '../../assets/EduAI.png';
 
@@ -72,6 +72,13 @@ const Header = () => {
           >
             <BookOpen className={styles.navIcon} />
             <span>Résumer</span>
+          </button>
+          <button
+            className={styles.navLink}
+            onClick={() => scrollToSection('future')}
+          >
+            <Zap className={styles.navIcon} />
+            <span>Le futur</span>
           </button>
           <button
             className={styles.navLink}
