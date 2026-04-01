@@ -113,7 +113,7 @@ const Hero = () => {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@eduai.fr');
+    navigator.clipboard.writeText('dahmedbessem@gmail.com');
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);
   };

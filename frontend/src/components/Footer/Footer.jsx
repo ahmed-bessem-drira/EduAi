@@ -1,4 +1,4 @@
-import { Brain, Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Brain, Globe, Linkedin, Mail, Heart } from 'lucide-react';
 import styles from './Footer.module.css';
 import signatureUrl from '../../assets/signature.png';
 
@@ -7,21 +7,21 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      name: 'GitHub',
-      icon: Github,
-      href: 'https://github.com',
-      label: 'GitHub Profile',
+      name: 'Portfolio',
+      icon: Globe,
+      href: 'https://ahmed-bessem-drira.vercel.app/',
+      label: 'Portfolio Profile',
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/ahmed-bessem-drira/',
       label: 'LinkedIn Profile',
     },
     {
       name: 'Email',
       icon: Mail,
-      href: 'mailto:contact@eduai.com',
+      href: 'mailto:dahmedbessem@gmail.com',
       label: 'Email Contact',
     },
   ];
