@@ -3,6 +3,7 @@
   background-color: var(--bg-primary, #0a0a0a);
   position: relative;
   z-index: 1;
+  scroll-margin-top: 100px;
 }
 
 .container {
@@ -18,9 +19,8 @@
 .title {
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
-  color: var(--accent-primary, #d9a441);
+  color: #ffffff;
   margin-bottom: 16px;
-  text-shadow: 0 4px 20px rgba(217, 164, 65, 0.15);
 }
 
 .subtitle {
