@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const defaultBase = import.meta.env.PROD ? 'https://eduai-e6sd.onrender.com' : 'http://localhost:3001';
-const API_URL = (import.meta.env.VITE_API_URL || defaultBase) + '/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({
   baseURL: API_URL,
