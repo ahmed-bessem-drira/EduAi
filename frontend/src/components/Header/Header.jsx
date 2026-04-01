@@ -40,12 +40,13 @@ const Header = () => {
       className={`${styles.header} ${scrollOpacity > 0 ? styles.visible : ''}`}
       style={{
         opacity: scrollOpacity,
+        visibility: scrollOpacity < 0.1 ? 'hidden' : 'visible',
         transform: `translateY(${(1 - scrollOpacity) * -20}px)`,
         pointerEvents: scrollOpacity < 0.2 ? 'none' : 'auto'
       }}
     >
       <div className={styles.container}>
-        <div className={styles.logo} onClick={() => scrollToSection('top')}>
+        <div className={styles.logo} onClick={() => scrollToSection('home')}>
           <img src={logoUrl} alt="EduAI Logo" className={styles.logoImg} />
           <span className={styles.logoText}>EduAI</span>
         </div>
@@ -53,10 +54,24 @@ const Header = () => {
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
           <button
             className={styles.navLink}
-            onClick={() => scrollToSection('tool')}
+            onClick={() => scrollToSection('home')}
           >
             <BookOpen className={styles.navIcon} />
-            <span>Outil</span>
+            <span>Accueil</span>
+          </button>
+          <button
+            className={styles.navLink}
+            onClick={() => scrollToSection('about')}
+          >
+            <BookOpen className={styles.navIcon} />
+            <span>À propos</span>
+          </button>
+          <button
+            className={styles.navLink}
+            onClick={() => scrollToSection('summarize')}
+          >
+            <BookOpen className={styles.navIcon} />
+            <span>Résumer</span>
           </button>
           <button
             className={styles.navLink}

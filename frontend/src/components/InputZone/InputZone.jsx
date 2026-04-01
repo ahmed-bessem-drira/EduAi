@@ -72,7 +72,7 @@ const InputZone = ({ onGenerate }) => {
   const error = uploadError || generateError;
 
   return (
-    <section id="tool" className={styles.inputZone}>
+    <section id="summarize" className={styles.inputZone}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>Analyser votre cours</h2>

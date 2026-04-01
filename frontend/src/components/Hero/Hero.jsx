@@ -10,14 +10,18 @@ const Hero = () => {
     if (!containerRef.current) return;
 
     const canvas = document.createElement('canvas');
+    const container = containerRef.current;
+    if (!container) return;
+    
     canvasRef.current = canvas;
-    containerRef.current.appendChild(canvas);
+    container.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
     let particles = [];
     let animationFrameId;
     let width, height;
 
+    // Existing particle logic ... (no changes to classes or animation)
     const particleCount = window.innerWidth < 768 ? 40 : 80;
     const connectionDistance = 150;
     const goldColor = '#d9a441';
@@ -102,7 +106,9 @@ const Hero = () => {
     return () => {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrameId);
-      if (containerRef.current && canvasRef.current) containerRef.current.removeChild(canvasRef.current);
+      if (container && canvas) {
+        container.removeChild(canvas);
+      }
     };
   }, []);
 
@@ -112,13 +118,13 @@ const Hero = () => {
     setTimeout(() => setIsCopied(false), 2000);
   };
 
-  const scrollToTool = () => {
-    const element = document.getElementById('tool');
+  const scrollToAbout = () => {
+    const element = document.getElementById('about');
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className={styles.heroSection}>
+    <section id="home" className={styles.heroSection}>
       <div ref={containerRef} className={styles.canvasContainer} />
 
       <div className={styles.headerArea}>
@@ -131,7 +137,7 @@ const Hero = () => {
         <h1 className={styles.title}>
           Là où le savoir devient<br />intelligence et le savoir<br />devient réussite
         </h1>
-        <button className={styles.ctaModern} onClick={scrollToTool}>
+        <button className={styles.ctaModern} onClick={scrollToAbout}>
           Commencer l'expérience
         </button>
       </div>

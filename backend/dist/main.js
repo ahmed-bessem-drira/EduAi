@@ -24,7 +24,7 @@ async function bootstrap() {
     app.useGlobalInterceptors(new logging_interceptor_1.LoggingInterceptor());
     app.setGlobalPrefix('api');
     await app.listen(port);
-    console.log(`🚀 EduAI Backend running on port ${port}`);
+    console.log(`EduAI Backend running on port ${port}`);
     console.log(`🌐 CORS enabled for: ${frontendUrl}`);
 }
 bootstrap();

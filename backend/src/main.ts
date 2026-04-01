@@ -31,7 +31,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   await app.listen(port);
-  console.log(`🚀 EduAI Backend running on port ${port}`);
+  console.log(`EduAI Backend running on port ${port}`);
   console.log(`🌐 CORS enabled for: ${frontendUrl}`); // Dev watch trigger
 }
 
