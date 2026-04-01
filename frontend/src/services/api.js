@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || '/api';
+let API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+if (import.meta.env.PROD) {
+  API_URL = ''; // Route in relative for Vercel so the proxy kicks in
+}
 
 const api = axios.create({
   baseURL: API_URL,
@@ -45,27 +48,27 @@ api.interceptors.response.use(
 export const uploadPDF = async (file) => {
   const formData = new FormData();
   formData.append('file', file);
-  
-  const response = await api.post('/upload/pdf', formData, {
+
+  const response = await api.post('/api/upload/pdf', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
     },
   });
-  
+
   return response.data;
 };
 
 export const generateContent = async (text, language = 'fr') => {
-  const response = await api.post('/ai/generate', {
+  const response = await api.post('/api/ai/generate', {
     text,
     language,
   });
-  
+
   return response.data;
 };
 
 export const healthCheck = async () => {
-  const response = await api.get('/health');
+  const response = await api.get('/api/health');
   return response.data;
 };
 
