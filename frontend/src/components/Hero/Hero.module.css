@@ -18,8 +18,7 @@
   height: 100%;
   background-image: url("https://img.freepik.com/premium-photo/white-dust-scratches-black-background_279525-2.jpg?w=640");
   background-repeat: repeat;
-  opacity: 0.03; /* Reduced for performance */
-  mix-blend-mode: color-dodge;
+  opacity: 0.03;
   pointer-events: none;
   z-index: 1;
 }
@@ -64,7 +63,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   text-align: center;
   z-index: 10;
   width: 90%;
