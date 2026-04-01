@@ -1,6 +1,6 @@
-import React from 'react';
 import { Brain, Github, Linkedin, Mail, Heart } from 'lucide-react';
 import styles from './Footer.module.css';
+import signatureUrl from '../../assets/signature.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,17 +46,20 @@ const Footer = () => {
           <div className={styles.column}>
             <h3 className={styles.columnTitle}>Liens Rapides</h3>
             <nav className={styles.nav}>
-              <a href="#tool" className={styles.navLink}>
-                Outil d'Analyse
+              <a href="#home" className={styles.navLink}>
+                Accueil
+              </a>
+              <a href="#about" className={styles.navLink}>
+                À Propos
+              </a>
+              <a href="#summarize" className={styles.navLink}>
+                Résumer
+              </a>
+              <a href="#future" className={styles.navLink}>
+                Le futur
               </a>
               <a href="#contact" className={styles.navLink}>
                 Contact
-              </a>
-              <a href="#" className={styles.navLink}>
-                À Propos
-              </a>
-              <a href="#" className={styles.navLink}>
-                Documentation
               </a>
             </nav>
           </div>
@@ -91,10 +94,8 @@ const Footer = () => {
               © {currentYear} EduAI. Tous droits réservés.
             </p>
           </div>
-          <div className={styles.love}>
-            <span className={styles.loveText}>
-              Made with <Heart className={styles.heartIcon} /> and Groq AI
-            </span>
+          <div className={styles.signature}>
+            <img src={signatureUrl} alt="Signature" className={styles.signatureImg} />
           </div>
         </div>
       </div>

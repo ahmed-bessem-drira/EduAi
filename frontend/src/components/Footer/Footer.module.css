@@ -147,24 +147,21 @@
   margin: 0;
 }
 
-.love {
+.signature {
   display: flex;
   align-items: center;
-  gap: 4px;
 }
 
-.loveText {
-  color: #555;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.signatureImg {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1); /* Ensure it's visible on dark theme if it's a dark PNG */
 }
 
-.heartIcon {
-  width: 14px;
-  height: 14px;
-  color: var(--accent-primary);
+.signatureImg:hover {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
